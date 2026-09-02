@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pet Track | Dashboard</title>
+
+    <link rel="stylesheet" href="../dashboard/dashboard.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>🐾 Pet Track</h2>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="#" class="nav-link active">
+                <span>🏠</span>
+                Dashboard
+            </a>
+
+            <a href="#" class="nav-link">
+                <span>🐍</span>
+                My Pets
+            </a>
+
+            <a href="#" class="nav-link">
+                <span>🍴</span>
+                Feeding
+            </a>
+
+            <a href="#" class="nav-link">
+                <span>❤️</span>
+                Breeding
+            </a>
+
+            <a href="#" class="nav-link">
+                <span>🧬</span>
+                Projects
+            </a>
+
+            <a href="#" class="nav-link">
+                <span>📝</span>
+                Pet Records
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="#" class="nav-link">
+                <span>⚙️</span>
+                Settings
+            </a>
+
+            <button id="logoutBtn" class="logout-btn">
+                <span>🚪</span>
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOP HEADER -->
+        <header class="top-header">
+
+            <div>
+                <p class="welcome-small">Welcome back!</p>
+                <h1 id="userName">Pet Owner</h1>
+            </div>
+
+            <div class="profile">
+
+                <div class="profile-icon">
+                    🐾
+                </div>
+
+                <div class="profile-info">
+                    <strong id="profileName">Pet Owner</strong>
+                    <span id="userEmail">Loading...</span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- DASHBOARD -->
+        <section class="dashboard">
+
+            <!-- WELCOME CARD -->
+            <div class="welcome-card">
+
+                <div class="welcome-text">
+
+                    <span class="card-label">PET TRACK</span>
+
+                    <h2>
+                        Keep your pets healthy and happy.
+                    </h2>
+
+                    <p>
+                        Manage your pets, vaccination records,
+                        appointments and important health information
+                        in one place.
+                    </p>
+
+                    <button class="primary-btn">
+                        + Add Your Pet
+                    </button>
+
+                </div>
+
+                <div class="welcome-icon">
+                    🐕
+                </div>
+
+            </div>
+
+
+            <!-- STATISTICS -->
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        🐶
+                    </div>
+
+                    <div>
+                        <span>My Pets</span>
+                        <h3>0</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        💉
+                    </div>
+
+                    <div>
+                        <span>Vaccinations</span>
+                        <h3>0</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">
+                        📅
+                    </div>
+
+                    <div>
+                        <span>Appointments</span>
+                        <h3>0</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">
+                        💊
+                    </div>
+
+                    <div>
+                        <span>Medications</span>
+                        <h3>0</h3>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- LOWER CONTENT -->
+            <div class="dashboard-grid">
+
+                <!-- MY PETS -->
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h2>My Pets</h2>
+                            <p>Your registered pets</p>
+                        </div>
+
+                        <button class="text-btn">
+                            View All
+                        </button>
+
+                    </div>
+
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">
+                            🐾
+                        </div>
+
+                        <h3>No pets added yet</h3>
+
+                        <p>
+                            Add your first pet to start tracking
+                            their health information.
+                        </p>
+
+                        <button class="secondary-btn">
+                            + Add Pet
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- UPCOMING APPOINTMENTS -->
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h2>Upcoming Appointments</h2>
+                            <p>Your scheduled visits</p>
+                        </div>
+
+                        <button class="text-btn">
+                            View All
+                        </button>
+
+                    </div>
+
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">
+                            📅
+                        </div>
+
+                        <h3>No upcoming appointments</h3>
+
+                        <p>
+                            You don't have any scheduled
+                            appointments.
+                        </p>
+
+                        <button class="secondary-btn">
+                            + Schedule Appointment
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RECENT ACTIVITY -->
+            <div class="dashboard-card activity-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h2>Recent Activity</h2>
+                        <p>Your latest pet records</p>
+                    </div>
+
+                </div>
+
+                <div class="activity-empty">
+
+                    <span>📋</span>
+
+                    <p>
+                        Your recent activities will appear here.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script type="module" src="../js/login.js"></script>
+
+    
+
+</body>
+</html>

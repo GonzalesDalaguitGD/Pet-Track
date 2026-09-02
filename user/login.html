@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Pet Track</title>
+
+    <link rel="stylesheet" href="../css/auth.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <main class="auth-container">
+
+        <section class="auth-card">
+
+            <div class="brand">
+                <div class="brand-icon">🐾</div>
+                <h1>Pet Track</h1>
+                <p>Keep your pets happy, healthy, and safe.</p>
+            </div>
+
+            <div class="form-container">
+
+                <h2>Welcome Back!</h2>
+                <p class="form-subtitle">Login to your Pet Track account</p>
+
+                <form id="loginForm">
+
+                    <div class="input-group">
+                        <label for="email">Email Address</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password">Password</label>
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Enter your password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="toggle-password"
+                                id="togglePassword"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+
+                        <label class="remember">
+                            <input type="checkbox" id="rememberMe">
+                            Remember me
+                        </label>
+
+                        <a href="#" class="forgot-password">
+                            Forgot Password?
+                        </a>
+
+                    </div>
+
+                    <button type="submit" class="auth-button">
+                        Log In
+                    </button>
+
+                    <p id="loginMessage" class="message"></p>
+
+                </form>
+
+                <div class="divider">
+                    <span>or</span>
+                </div>
+
+                <p class="switch-page">
+                    Don't have an account?
+                    <a href="signup.html">Create Account</a>
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script type="module" src="../js/login.js"></script>
+
+</body>
+</html>
