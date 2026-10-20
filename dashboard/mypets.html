@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Pets - Pet Track</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <span class="logo-icon">🐾</span>
+            <span>Pet Track</span>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="nav-item">
+                <span>🏠</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="mypets.html" class="nav-item active">
+                <span>🐾</span>
+                <span>My Pets</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>🍴</span>
+                <span>Feeding</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>❤️</span>
+                <span>Breeding</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>🚀</span>
+                <span>Projects</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>📋</span>
+                <span>Pet Records</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="#" class="nav-item">
+                <span>⚙️</span>
+                <span>Settings</span>
+            </a>
+
+            <a href="#" class="nav-item logout">
+                <span>🚪</span>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <button class="menu-btn" id="menuBtn">
+                ☰
+            </button>
+
+            <div class="owner">
+
+                <div class="owner-avatar">
+                    🐾
+                </div>
+
+                <div>
+                    <strong>Pet Owner</strong>
+                    <small>My Account</small>
+                </div>
+
+                <span class="owner-arrow">⌄</span>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE HEADER -->
+
+        <section class="page-header">
+
+            <div class="page-title">
+
+                <div class="title-icon">
+                    🐾
+                </div>
+
+                <div>
+                    <h1>My Pets</h1>
+
+                    <p>
+                        Create and manage your pet categories,
+                        then add and track your pets.
+                    </p>
+                </div>
+
+            </div>
+
+            
+           
+            
+
+        </section>
+
+
+        <!-- ================= CATEGORY NAVIGATION ================= -->
+
+        <section class="category-navigation">
+
+            <div class="category-scroll" id="categoryNav">
+
+                <button class="category-tab active" data-category="all">
+                    <span>🐾</span>
+                    All
+                </button>
+
+                <!-- User categories will appear here -->
+
+                <button class="add-category-tab" id="addCategoryTab">
+                    <span>＋</span>
+                    Add Category
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CONTENT ================= -->
+
+        <section class="pets-container">
+
+            <!-- EMPTY STATE -->
+
+            <div class="empty-state" id="emptyState">
+
+                <div class="empty-icon">
+                    🐾
+                </div>
+
+                <h2>No Pet Categories Yet</h2>
+
+                <p>
+                    Create your first category to start
+                    organising your pets.
+                </p>
+
+                <button class="primary-btn" id="emptyAddBtn">
+                    ＋ Add Pet Category
+                </button>
+
+            </div>
+
+
+            <!-- CATEGORY CONTENT -->
+
+            <div class="category-content hidden" id="categoryContent">
+
+                <div class="category-heading">
+
+                    <div>
+                        <h2 id="selectedCategoryTitle">
+                            All Pets
+                        </h2>
+
+                        <p id="selectedCategoryDescription">
+                            All your registered pets
+                        </p>
+                    </div>
+
+                    <button class="primary-btn">
+                        ＋ Add Pet
+                    </button>
+
+                </div>
+
+
+                <!-- PET EMPTY STATE -->
+
+                <div class="no-pets">
+
+                    <div class="no-pets-icon">
+                        🐶
+                    </div>
+
+                    <h3>No pets added yet</h3>
+
+                    <p>
+                        Add a pet to this category
+                        to start tracking their information.
+                    </p>
+
+                    <button class="secondary-btn">
+                        ＋ Add Pet
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= ADD CATEGORY MODAL ================= -->
+
+    <div class="modal-overlay" id="categoryModal">
+
+        <div class="modal">
+
+            <button class="close-btn" id="closeModal">
+                ×
+            </button>
+
+            <div class="modal-header">
+
+                <div class="modal-icon">
+                    🐾
+                </div>
+
+                <div>
+                    <h2>Add Pet Category</h2>
+
+                    <p>
+                        Create a category to organise your pets.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <form id="categoryForm">
+
+                <!-- CATEGORY NAME -->
+
+                <div class="form-group">
+
+                    <label for="categoryName">
+                        Category Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="categoryName"
+                        placeholder="e.g. Ball Pythons, Cockatiels..."
+                        required
+                    >
+
+                </div>
+
+
+                <!-- GENERAL CLASSIFICATION -->
+
+                <div class="form-group">
+
+                    <label for="categoryType">
+                        Belongs To
+                    </label>
+
+                    <select id="categoryType" required>
+
+                        <option value="">
+                            Select classification
+                        </option>
+
+                        <option value="Birds">
+                            🐦 Birds
+                        </option>
+
+                        <option value="Reptiles">
+                            🐍 Reptiles
+                        </option>
+
+                        <option value="Fish">
+                            🐟 Fish
+                        </option>
+
+                        <option value="Mammals">
+                            🐱 Mammals
+                        </option>
+
+                        <option value="Amphibians">
+                            🐸 Amphibians
+                        </option>
+
+                        <option value="Arachnids">
+                            🕷️ Arachnids
+                        </option>
+
+                        <option value="Invertebrates">
+                            🦐 Invertebrates
+                        </option>
+
+                        <option value="Small Animals">
+                            🐭 Small Animals
+                        </option>
+
+                        <option value="Other">
+                            🐾 Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- ICON -->
+
+                <div class="form-group">
+
+                    <label>
+                        Choose Icon
+                    </label>
+
+                    <div class="icon-grid">
+
+                        <button type="button"
+                            class="icon-option selected"
+                            data-icon="🐦">
+                            🐦
+                        </button>
+
+                        <button type="button"
+                            class="icon-option"
+                            data-icon="🦜">
+                            🦜
+                        </button>
+
+                        <button type="button"
+                            class="icon-option"
+                            data-icon="🐍">
+                            🐍
+                        </button>
+
+                        <button type="button"
+                            class="icon-option"
+                            data-icon="🦎">
+                            🦎
+                        </button>
+
+                        <button type="button"
+                            class="icon-option"
+                            data-icon="🐟">
+                            🐟
+                        </button>
+
+                        <button type="button"
+                            class="icon-option"
+                            data-icon="🐠">
+                            🐠
+                        </button>
+
+                        <button type="button"
+                            class="icon-option"
+                            data-icon="🐱">
+                            🐱
+                        </button>
+
+                        <button type="button"
+                            class="icon-option"
+                            data-icon="🐶">
+                            🐶
+                        </button>
+
+                        <button type="button"
+                            class="icon-option"
+                            data-icon="🐭">
+                            🐭
+                        </button>
+
+                        <button type="button"
+                            class="icon-option"
+                            data-icon="🐰">
+                            🐰
+                        </button>
+
+                        <button type="button"
+                            class="icon-option"
+                            data-icon="🕷️">
+                            🕷️
+                        </button>
+
+                        <button type="button"
+                            class="icon-option"
+                            data-icon="🦐">
+                            🦐
+                        </button>
+
+                        <button type="button"
+                            class="icon-option"
+                            data-icon="🐸">
+                            🐸
+                        </button>
+
+                        <button type="button"
+                            class="icon-option"
+                            data-icon="🐢">
+                            🐢
+                        </button>
+
+                        <button type="button"
+                            class="icon-option"
+                            data-icon="🦀">
+                            🦀
+                        </button>
+
+                        <button type="button"
+                            class="icon-option"
+                            data-icon="🐾">
+                            🐾
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BUTTONS -->
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="secondary-btn"
+                        id="cancelBtn">
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="primary-btn">
+                        Add Category
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+   <script type="module" src="dashboard.js"></script>
+
+</body>
+</html>
